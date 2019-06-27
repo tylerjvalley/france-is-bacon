@@ -1,6 +1,23 @@
+.header {
+    background: #005AA7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FFFDE4, #005AA7);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #FFFDE4, #005AA7);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+     padding: 2em;
+     margin: auto;
+     margin-bottom: 2em;
+}
 .title {
+    color: white;
     text-align: center;
     font-weight: bold;
+    font-family: 'Carter One', cursive;
+    font-size: 3em;
+    padding: 1em;
+   
 }
 
 
@@ -9,8 +26,6 @@
 }
 
 .search-area {
-    border: 2px solid black;
-    background: cyan;
     width: 20%;
     padding: 1em;
     text-align: center;

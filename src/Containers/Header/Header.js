@@ -12,12 +12,14 @@ class header extends Component {
        
          
         return (
-            
+            <>
             <div className="header">
                 <h1 className="title">France Is Bacon</h1>
                 <Search /> 
-                <Subreddits />
             </div>
+                <Subreddits />
+           
+           </>
           
         );
     }
