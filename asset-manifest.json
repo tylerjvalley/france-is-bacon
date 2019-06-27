@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/france-is-bacon/static/css/main.0eaa58d4.chunk.css",
-    "main.js": "/france-is-bacon/static/js/main.79ef67d0.chunk.js",
-    "main.js.map": "/france-is-bacon/static/js/main.79ef67d0.chunk.js.map",
-    "runtime~main.js": "/france-is-bacon/static/js/runtime~main.33930fee.js",
-    "runtime~main.js.map": "/france-is-bacon/static/js/runtime~main.33930fee.js.map",
-    "static/js/2.d11e7daa.chunk.js": "/france-is-bacon/static/js/2.d11e7daa.chunk.js",
-    "static/js/2.d11e7daa.chunk.js.map": "/france-is-bacon/static/js/2.d11e7daa.chunk.js.map",
+    "main.css": "/france-is-bacon/static/css/main.4bf1fab9.chunk.css",
+    "main.js": "/france-is-bacon/static/js/main.240f6833.chunk.js",
+    "main.js.map": "/france-is-bacon/static/js/main.240f6833.chunk.js.map",
+    "runtime~main.js": "/france-is-bacon/static/js/runtime~main.4c838295.js",
+    "runtime~main.js.map": "/france-is-bacon/static/js/runtime~main.4c838295.js.map",
+    "static/css/2.a0f546cc.chunk.css": "/france-is-bacon/static/css/2.a0f546cc.chunk.css",
+    "static/js/2.4fb48721.chunk.js": "/france-is-bacon/static/js/2.4fb48721.chunk.js",
+    "static/js/2.4fb48721.chunk.js.map": "/france-is-bacon/static/js/2.4fb48721.chunk.js.map",
     "index.html": "/france-is-bacon/index.html",
-    "precache-manifest.276d9504fe21a8fba87b6b5542bb872e.js": "/france-is-bacon/precache-manifest.276d9504fe21a8fba87b6b5542bb872e.js",
+    "precache-manifest.ebd2214aa22dabde25356b9d3140d0d5.js": "/france-is-bacon/precache-manifest.ebd2214aa22dabde25356b9d3140d0d5.js",
     "service-worker.js": "/france-is-bacon/service-worker.js",
-    "static/css/main.0eaa58d4.chunk.css.map": "/france-is-bacon/static/css/main.0eaa58d4.chunk.css.map"
+    "static/css/2.a0f546cc.chunk.css.map": "/france-is-bacon/static/css/2.a0f546cc.chunk.css.map",
+    "static/css/main.4bf1fab9.chunk.css.map": "/france-is-bacon/static/css/main.4bf1fab9.chunk.css.map",
+    "static/media/semantic.min.css": "/france-is-bacon/static/media/outline-icons.ef60a4f6.woff"
   }
 }
