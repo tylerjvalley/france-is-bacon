@@ -1,0 +1,2 @@
+export const SEARCH_SUBREDDIT = 'SEARCH_SUBREDDIT';
+export const DISPLAY_POSTS = 'DISPLAY_POSTS';

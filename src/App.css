@@ -1,0 +1,29 @@
+.title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.subreddits-selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-menu {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.custom-menu li {
+    display: block;
+    border: 2px solid black;
+    padding: 5px;
+    flex: 0 1 auto;
+    list-style-type: none;
+    
+}
