@@ -4,7 +4,7 @@ import './index.css';
 import store from '../src/Store/store';
 import { Provider } from 'react-redux';
 import App from './App';
-import 'semantic-ui-css/semantic.min.css'
+import 'semantic-ui-css/semantic.min.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

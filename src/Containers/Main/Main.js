@@ -21,7 +21,7 @@ const main = () => (
             </div>
             <div className="post-info">
                 4 <Icon name="arrow alternate circle up outline" /> 1 <Icon name="arrow alternate circle down outline" /> 5 <Icon name="comment outline" /> <br/>
-                by AutoModerator 12 hours ago 2 Messages
+                by AutoModerator 12 hours ago
             </div>
 
         </div>
