@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'semantic-ui-react'
 
 
 const main = () => (
@@ -19,8 +20,9 @@ const main = () => (
                 </h4>
             </div>
             <div className="post-info">
-                4 ^  by AutoModerator 12 hours ago 2 Messages
-                </div>
+                4 <Icon name="arrow alternate circle up outline" /> 1 <Icon name="arrow alternate circle down outline" /> 5 <Icon name="comment outline" /> <br/>
+                by AutoModerator 12 hours ago 2 Messages
+            </div>
 
         </div>
 
