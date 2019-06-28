@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions';
-import Search from '../../Components/Search/Search';
+import SearchField from '../../Components/Search/Search';
 import Subreddits from '../../Components/Subreddits/Subreddits';
 
 
@@ -15,13 +15,13 @@ class header extends Component {
             <>
             <div className="header">
                 <h1 className="title">France Is Bacon</h1>
-                <Search /> 
+                <SearchField search={this.props.onSearch} /> 
             </div>
                 <Subreddits />
            
            </>
           
-        );
+        ); 
     }
 
 }
@@ -30,7 +30,7 @@ class header extends Component {
 const mapStateToProps = state => {
 
     return {
-        src: state.src.search,
+        src: state.src.searched,
     }
 }
 

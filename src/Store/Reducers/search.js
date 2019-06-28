@@ -2,7 +2,8 @@ import * as actionTypes from '../Actions/types';
 
 
 const initialState = {
-    search: '',
+    //all searched subreddits will be displayed below the search form.
+    searched: [],
 }
 
 const reducer = (state = initialState, action) => {

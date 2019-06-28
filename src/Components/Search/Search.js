@@ -2,18 +2,22 @@ import React from 'react';
 import { Search, Button } from 'semantic-ui-react';
 
 
-const search = () => {
+const searchField= (props) => {
 
-    
+   
     return (
-        <div className="search-area">
-            <Search />
-            <Button>Add Subreddit</Button>
-         </div>
+        <form onSubmit={(e) => this.handleSubmit(e)}>
+            <div className="search-area">
+                <Search
+                    onSearchChange={props.search} />
+                <Button type="submit">Add Subreddit</Button>
+            </div>
+        </form>
     );
-}
+ }
 
 
 
-export default search;
+
+export default searchField;
 
