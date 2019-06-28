@@ -1,3 +1,4 @@
 export { search } from './search';
+export { submit } from './search';
 
-export { display } from './display';
+export { fetchSubsBegin, fetchSubsFailure, fetchSubsSuccess } from './display';

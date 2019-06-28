@@ -19,7 +19,7 @@ class Subreddits extends Component {
             })
 
             */
-        
+           console.log(this.props.subs)
         return (
             <Grid className="subreddit-selection" centered>
                 <Grid.Row>

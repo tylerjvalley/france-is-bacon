@@ -15,9 +15,11 @@ class header extends Component {
             <>
             <div className="header">
                 <h1 className="title">France Is Bacon</h1>
-                <SearchField search={this.props.onSearch} /> 
+                <SearchField 
+                    search={this.props.onSearch}
+                    clicked={() => this.props.onSubmit(this.props.src)} /> 
             </div>
-                <Subreddits />
+                <Subreddits subs={this.props.subs} />
            
            </>
           
@@ -31,12 +33,15 @@ const mapStateToProps = state => {
 
     return {
         src: state.src.searched,
+        subs: state.src.subreddits
+        
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSearch: () => dispatch(actions.search()),
+        onSearch: (e) => dispatch(actions.search(e)),
+        onSubmit: (value) => dispatch(actions.submit(value))
     }
 }
 
