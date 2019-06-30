@@ -1,12 +1,11 @@
 import * as actions from '../Actions/types';
-import { fetchSubImages } from '../Actions/fetchSubs';
+//import { fetchSubImages } from '../Actions/fetchSubs';
 
 
 const initialState = {
     //all searched subreddits will be displayed below the search
     searched: '',
     subreddits: [],
-    subImages: [],
 }
 
 export const reducer = (state = initialState, action) => {
@@ -19,10 +18,10 @@ export const reducer = (state = initialState, action) => {
                 }
             
             case actions.SUBMIT_SUBREDDIT: 
+        
                 return {
                     ...state,
                     subreddits: state.subreddits.concat(action.val),
-                    subImages: state.subImages.concat(fetchSubImages(action.val)),
                 }
                 
             default:

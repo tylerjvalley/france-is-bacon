@@ -3,19 +3,19 @@ import axios from 'axios';
 
 //fetch subreddit icon images
 export const fetchSubImages = (sub) => {
+  
     const apiUrl = 'https://www.reddit.com/';
     
 
-    console.log(sub)
-
-     axios.get(apiUrl + 'r/' + sub + '/about.json')
+    
+     return axios.get(apiUrl + 'r/' + sub + '/about.json')
         .then(res => {
             return res.data.data.icon_img
         })
-        .then(image => {
-            console.log(image)
+        .catch(error => {
+            console.log(error);
         })
-        .catch(error => console.log(error))
+        
 
 }
 
