@@ -1,4 +1,2 @@
-export { search } from './search';
-export { submit } from './search';
-
-export { fetchSubsBegin, fetchSubsFailure, fetchSubsSuccess } from './display';
+export { search, submit } from './search';
+export { fetchSubImages } from './fetchSubs';

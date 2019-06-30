@@ -36,3 +36,7 @@
     margin: 1em;
 }
 
+
+.ui.search>.results>.message .header {
+    background: white;
+}

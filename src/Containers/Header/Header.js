@@ -3,23 +3,53 @@ import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions';
 import SearchField from '../../Components/Search/Search';
 import Subreddits from '../../Components/Subreddits/Subreddits';
+import axios from 'axios';
 
 
-class header extends Component {
+class Header extends Component {
+
+    state = {
+        subImage: '',
+    }
+
+    componentDidMount() {
+        //const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const apiUrl = 'https://www.reddit.com/';
+        const subreddit = this.props.subs
+        
+        console.log(subreddit)
+        
+        if (subreddit.length > 0) {
+            axios.get(apiUrl + 'r/' + subreddit + '/about.json')
+                .then(res => console.log(res.data.data.icon_img))
+                .catch(error => console.log(error))
+            
+           
+        }
+        
+        
+        
+       
+    }
+
+    
 
     render () {
-
        
-         
+       
         return (
             <>
+
             <div className="header">
                 <h1 className="title">France Is Bacon</h1>
                 <SearchField 
                     search={this.props.onSearch}
                     clicked={() => this.props.onSubmit(this.props.src)} /> 
             </div>
-                <Subreddits subs={this.props.subs} />
+                <Subreddits subs={this.props.subs}
+                            image={this.state.subImage}
+                            
+                             />
            
            </>
           
@@ -46,4 +76,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

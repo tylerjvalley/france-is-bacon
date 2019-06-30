@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import displayReducer from './Reducers/display';
-import searchReducer from './Reducers/search';
+import { reducer } from './Reducers/search';
 
 const rootReducer = combineReducers({
-    src: searchReducer,
+    src: reducer,
     dis: displayReducer
 })
 

@@ -1,4 +1,4 @@
-import * as actionTypes from '../Actions/types';
+/*import * as actionTypes from '../Actions/types';
 
 
 const initialState = {
@@ -10,25 +10,7 @@ const initialState = {
 const reducer = ( state = initialState, action ) => {
     if ( action.type ) {
         switch( action.type ) {
-            case actionTypes.FETCH_SUBS_BEGIN:
-                return {
-                    ...state,
-                    pending: true
-                }
-
-            case actionTypes.FETCH_SUBS_SUCCESS:
-                return {
-                    ...state,
-                    pending: false,
-                    subs: action.payload
-                }
             
-            case actionTypes.FETCH_SUBS_FAILURE: 
-                return {
-                    ...state,
-                    pending: false,
-                    error: action.error
-                }
                 
             
             default: 
@@ -39,3 +21,5 @@ const reducer = ( state = initialState, action ) => {
 
 
 export default reducer;
+
+*/

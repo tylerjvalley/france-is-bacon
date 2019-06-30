@@ -1,24 +1,38 @@
-import { fetchSubsBegin, fetchSubsSuccess, fetchSubsFailure } from './actions';
+import axios from 'axios';
 
 
 //fetch subreddit icon images
 export const fetchSubImages = (sub) => {
-    return dispatch => {
-        dispatch(fetchSubsBegin());
-        fetch('https://www.reddit.com/' + sub + '/about.json')
-        .then(res => res.json())
+    const apiUrl = 'https://www.reddit.com/';
+    
+
+    console.log(sub)
+
+     axios.get(apiUrl + 'r/' + sub + '/about.json')
         .then(res => {
-            if(res.error) {
-                throw(res.error);
-            }
-            dispatch(fetchSubsSuccess(res.data.data.icon_img)) //check api
             return res.data.data.icon_img
         })
-        .catch(error => {
-            dispatch(fetchSubsFailure(error));
+        .then(image => {
+            console.log(image)
         })
-    }
+        .catch(error => console.log(error))
+
 }
+
+/*
+    if (sub.length > 0) {
+       image =  axios.get(apiUrl + 'r/' + sub + '/about.json')
+            .then(res => console.log(res.data.data.icon_img))
+            .catch(error => console.log(error)
+        
+    }
+    
+    return image;*/
+
+
+
+
+
 
 //fetch posts...
 

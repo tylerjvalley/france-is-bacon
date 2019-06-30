@@ -1,25 +1,28 @@
-import * as actionTypes from '../Actions/types';
+import * as actions from '../Actions/types';
+import { fetchSubImages } from '../Actions/fetchSubs';
 
 
 const initialState = {
     //all searched subreddits will be displayed below the search
     searched: '',
     subreddits: [],
+    subImages: [],
 }
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     if (action.type) {
         switch (action.type) {
-            case actionTypes.SEARCH_SUBREDDIT:
+            case actions.SEARCH_SUBREDDIT:
                 return {
                     ...state,
                     searched: action.val
                 }
             
-            case actionTypes.SUBMIT_SUBREDDIT: 
+            case actions.SUBMIT_SUBREDDIT: 
                 return {
                     ...state,
-                    subreddits: state.subreddits.concat(action.val)
+                    subreddits: state.subreddits.concat(action.val),
+                    subImages: state.subImages.concat(fetchSubImages(action.val)),
                 }
                 
             default:
@@ -29,4 +32,3 @@ const reducer = (state = initialState, action) => {
 }
 
 
-export default reducer
