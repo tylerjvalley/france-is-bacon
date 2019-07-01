@@ -33,7 +33,7 @@ class Header extends Component {
             return (
 
                 <Subreddits
-                    clicked={() => this.handleSubClick(this.props.src)}
+                    clicked={() => this.handleSubClick(sub)}
                     key={sub}
                     sub={sub}
                 />
