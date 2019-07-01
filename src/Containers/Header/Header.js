@@ -7,10 +7,6 @@ import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
 import { fetchSubPosts } from '../../Store/Actions/fetchSubs';
 
-//import axios from 'axios';
-
-
-
 class Header extends Component {
 
     state = {
@@ -66,21 +62,7 @@ class Header extends Component {
                 />    
             )
         })
-        /*
-        if (this.state.posts.length > 0) {
-            main =  (
-                <Main
-                    subreddit_title={this.state.posts[0].data.subreddit_name_prefixed}
-                    post_title={this.state.posts[0].data.title}
-                    post_preview={this.state.posts[0].data.thumbnail}
-                    num_comments={this.state.posts[0].data.num_comments.toString()}
-                    score={this.state.posts[0].data.score.toString()}
-                    author={this.state.posts[0].data.author}
-                    //Get time created and create a function that tells the user how long ago it was created
-                     />
-            )
-        }
-        */
+       
 
 
         return (

@@ -5,6 +5,8 @@ import { fetchSubImages } from '../../Store/Actions/fetchSubs';
 
 
 
+
+
 class Subreddits extends Component {
 
     state = {
@@ -13,7 +15,16 @@ class Subreddits extends Component {
 
     componentDidMount() {
         fetchSubImages(this.props.sub).then(image => {
-            this.setState({subImage: image})
+
+            if (image) {
+                this.setState({ subImage: image })
+            } else {
+                const redditImage = 'https://cdns.iconmonstr.com/wp-content/assets/preview/2016/240/iconmonstr-reddit-4.png';
+                this.setState({ subImage: redditImage})
+            }
+          
+                
+
            
         })
     }
