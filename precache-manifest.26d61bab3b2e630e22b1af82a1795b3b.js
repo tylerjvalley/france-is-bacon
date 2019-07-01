@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff1b400731931d2afc7e4609db5316f0",
+    "revision": "659930bee730e0a599ec058ffad52ef2",
     "url": "/france-is-bacon/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/france-is-bacon/static/css/2.01c256ea.chunk.css"
   },
   {
-    "revision": "2964f6b82d6e1fcf89b4",
+    "revision": "6686237ba727bd6aa9df",
     "url": "/france-is-bacon/static/css/main.a62e942f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/france-is-bacon/static/js/2.5c8a9807.chunk.js"
   },
   {
-    "revision": "2964f6b82d6e1fcf89b4",
-    "url": "/france-is-bacon/static/js/main.a9427d3a.chunk.js"
+    "revision": "6686237ba727bd6aa9df",
+    "url": "/france-is-bacon/static/js/main.5cda101f.chunk.js"
   },
   {
     "revision": "e57c6b5f346c07733027",
