@@ -20,7 +20,6 @@ class Header extends Component {
     }
 
     handleSubClick = (props) => {
-        console.log(props)
         fetchSubPosts(props).then(posts => {
             this.setState({posts: posts});
             console.log(this.state.posts[0].data)
