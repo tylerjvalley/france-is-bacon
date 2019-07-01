@@ -1,12 +1,8 @@
 import axios from 'axios';
 
-
+const apiUrl = 'https://www.reddit.com/';
 //fetch subreddit icon images
 export const fetchSubImages = (sub) => {
-  
-    const apiUrl = 'https://www.reddit.com/';
-    
-
     
      return axios.get(apiUrl + 'r/' + sub + '/about.json')
         .then(res => {
@@ -19,25 +15,17 @@ export const fetchSubImages = (sub) => {
 
 }
 
-/*
-    if (sub.length > 0) {
-       image =  axios.get(apiUrl + 'r/' + sub + '/about.json')
-            .then(res => console.log(res.data.data.icon_img))
-            .catch(error => console.log(error)
-        
-    }
-    
-    return image;*/
-
-
-
-
-
-
 //fetch posts...
 
-
-
+export const fetchSubPosts = (sub) => {
+    return axios.get(apiUrl + 'r/' + sub + '/top.json')
+        .then(res => {
+             console.log(res.data.data.children) //top 25 posts
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
 
 
 //maybe more stuff later

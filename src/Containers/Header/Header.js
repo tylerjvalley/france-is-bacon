@@ -4,6 +4,7 @@ import * as actions from '../../Store/Actions';
 import { Grid } from 'semantic-ui-react';
 import SearchField from '../../Components/Search/Search';
 import Subreddits from '../../Components/Subreddits/Subreddits';
+import { fetchSubPosts } from '../../Store/Actions/fetchSubs';
 
 //import axios from 'axios';
 
@@ -14,6 +15,8 @@ class Header extends Component {
 
     handleClick = (props) => {
         this.props.onSubmit(props)
+        console.log(props)
+        fetchSubPosts(props)
    
     }
 
