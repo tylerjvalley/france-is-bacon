@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions';
 import { Grid } from 'semantic-ui-react';
 import SearchField from '../../Components/Search/Search';
+import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
 import { fetchSubPosts } from '../../Store/Actions/fetchSubs';
 
@@ -12,6 +13,10 @@ import { fetchSubPosts } from '../../Store/Actions/fetchSubs';
 
 class Header extends Component {
 
+    state = {
+        posts: []
+    }
+
 
     handleClick = (props) => {
         this.props.onSubmit(props)
@@ -20,8 +25,15 @@ class Header extends Component {
 
     handleSubClick = (props) => {
         console.log(props)
-        fetchSubPosts(props)
-
+        fetchSubPosts(props).then(posts => {
+            posts.forEach(post => {
+                this.setState({
+                    posts: this.state.posts.concat(post.data)
+                })
+            })
+            console.log(this.state.posts);  
+        })
+        
     }
 
     render () {
@@ -41,6 +53,25 @@ class Header extends Component {
 
 
         })
+
+
+        let main; 
+
+        if (this.state.posts.length > 0) {
+            main =  (
+                <Main
+                    subreddit_title={this.state.posts[0].subreddit_name_prefixed}
+                    post_title={this.state.posts[0].title}
+                    post_preview={this.state.posts[0].thumbnail}
+                    num_comments={this.state.posts[0].num_comments.toString()}
+                    score={this.state.posts[0].score.toString()}
+                    author={this.state.posts[0].author}
+                    //Get time created and create a function that tells the user how long ago it was created
+                     />
+            )
+        }
+
+
         return (
             <>
 
@@ -55,6 +86,8 @@ class Header extends Component {
                         {subreddits}
                     </Grid.Row>
                 </Grid>
+
+            {main}
            </>
           
         ); 

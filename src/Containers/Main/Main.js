@@ -1,14 +1,14 @@
 import React from 'react';
-import { Icon } from 'semantic-ui-react'
+import { Icon, Image } from 'semantic-ui-react'
 
 
-const main = () => (
+const main = (props) => (
 
 
     <div className="main-content">
 
         <div className="sub-title">
-            <h4>r/funny</h4>
+            <h4>{props.subreddit_title}</h4>
         </div>
 
         <div className="posts">
@@ -16,12 +16,14 @@ const main = () => (
             <div className="post">
 
                 <h4 className="post-title">
-                    WTF Wednesday
+                    {props.post_title}
                 </h4>
+
+                <Image src={props.post_preview} />
             </div>
             <div className="post-info">
-                4 <Icon name="arrow alternate circle up outline" /> 1 <Icon name="arrow alternate circle down outline" /> 5 <Icon name="comment outline" /> <br/>
-                by AutoModerator 12 hours ago
+                <Icon name="arrow alternate circle up outline" /> {props.score} <Icon name="arrow alternate circle down outline" /> {props.num_comments} <Icon name="comment outline" /> <br/>
+                by {props.author} | 12 hours ago
             </div>
 
         </div>

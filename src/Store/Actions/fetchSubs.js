@@ -20,7 +20,7 @@ export const fetchSubImages = (sub) => {
 export const fetchSubPosts = (sub) => {
     return axios.get(apiUrl + 'r/' + sub + '/top.json')
         .then(res => {
-             console.log(res.data.data.children) //top 25 posts
+             return res.data.data.children //top 25 posts
         })
         .catch(error => {
             console.log(error)
