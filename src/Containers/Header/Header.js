@@ -26,12 +26,9 @@ class Header extends Component {
     handleSubClick = (props) => {
         console.log(props)
         fetchSubPosts(props).then(posts => {
-            posts.forEach(post => {
-                this.setState({
-                    posts: this.state.posts.concat(post.data)
-                })
-            })
-            console.log(this.state.posts);  
+            this.setState({posts: posts});
+            console.log(this.state.posts[0].data)
+           
         })
         
     }
@@ -55,21 +52,35 @@ class Header extends Component {
         })
 
 
-        let main; 
-
+         const main = this.state.posts.map(post => {      
+            return (
+                <Main
+                    key={post.data.id}
+                    subreddit_title={post.data.subreddit_name_prefixed}
+                    post_title={post.data.title}
+                    post_preview={post.data.thumbnail}
+                    num_comments={post.data.num_comments.toString()}
+                    score={post.data.score.toString()}
+                    author={post.data.author}
+                //Get time created and create a function that tells the user how long ago it was created
+                />    
+            )
+        })
+        /*
         if (this.state.posts.length > 0) {
             main =  (
                 <Main
-                    subreddit_title={this.state.posts[0].subreddit_name_prefixed}
-                    post_title={this.state.posts[0].title}
-                    post_preview={this.state.posts[0].thumbnail}
-                    num_comments={this.state.posts[0].num_comments.toString()}
-                    score={this.state.posts[0].score.toString()}
-                    author={this.state.posts[0].author}
+                    subreddit_title={this.state.posts[0].data.subreddit_name_prefixed}
+                    post_title={this.state.posts[0].data.title}
+                    post_preview={this.state.posts[0].data.thumbnail}
+                    num_comments={this.state.posts[0].data.num_comments.toString()}
+                    score={this.state.posts[0].data.score.toString()}
+                    author={this.state.posts[0].data.author}
                     //Get time created and create a function that tells the user how long ago it was created
                      />
             )
         }
+        */
 
 
         return (
@@ -87,7 +98,7 @@ class Header extends Component {
                     </Grid.Row>
                 </Grid>
 
-            {main}
+                {main}
            </>
           
         ); 
