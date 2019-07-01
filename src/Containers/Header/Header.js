@@ -15,9 +15,13 @@ class Header extends Component {
 
     handleClick = (props) => {
         this.props.onSubmit(props)
+        
+    }
+
+    handleSubClick = (props) => {
         console.log(props)
         fetchSubPosts(props)
-   
+
     }
 
     render () {
@@ -29,6 +33,7 @@ class Header extends Component {
             return (
 
                 <Subreddits
+                    clicked={() => this.handleSubClick(this.props.src)}
                     key={sub}
                     sub={sub}
                 />

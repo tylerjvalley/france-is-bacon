@@ -24,7 +24,7 @@ class Subreddits extends Component {
         return (
          
             
-        <Grid.Column width={2}>
+        <Grid.Column onClick={this.props.clicked}width={2}>
             <Image
                 label={{ as: 'a', color: 'blue', content: `${this.props.sub}`, ribbon: true }}
                 src={this.state.subImage}
