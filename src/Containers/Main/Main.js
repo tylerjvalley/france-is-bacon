@@ -23,7 +23,16 @@ const main = (props) => {
                 <div className="post">
 
                     <h4 className="post-title">
-                        <Link to="/post/">{props.post_title}</Link>
+                        <Link to={{
+                            pathname: '/post/',
+                            state: {
+                                postTitle: props.post_title,
+                                image: props.post_preview,
+                                text: props.post_text,
+                                author: props.author,
+                                comments: props.comments
+                            }
+                        }}>{props.post_title}</Link>
                     </h4>
                     
                     {preview_image}

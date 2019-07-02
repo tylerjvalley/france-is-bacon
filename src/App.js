@@ -14,7 +14,9 @@ class App extends Component {
       <div className="App">
        <Router>
           <Route path="/" exact component={Header} />
-          <Route path="/post/" component={Post} />
+          <Route 
+            path="/post/" 
+            render={(props) => <Post {...props} isAuthed={true}/>} />
           <footer></footer>
         </Router>
       </div>

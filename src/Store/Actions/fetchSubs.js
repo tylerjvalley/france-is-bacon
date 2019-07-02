@@ -45,5 +45,15 @@ export const fetchSubPosts = (sub) => {
 }
 
 
-//maybe more stuff later
+//fetch post comments...
+
+export const fetchPostComments = () => {
+    return axios.get(apiUrl + 'r/funny/comments/c87acm.json')
+        .then(res => {
+            console.log(res.data[1].data.children)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
 

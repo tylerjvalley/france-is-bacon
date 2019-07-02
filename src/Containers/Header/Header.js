@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react';
 import SearchField from '../../Components/Search/Search';
 import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
-import { fetchSubPosts, checkSubreddit } from '../../Store/Actions/fetchSubs';
+import { fetchSubPosts, checkSubreddit, fetchPostComments } from '../../Store/Actions/fetchSubs';
 
 class Header extends Component {
 
@@ -38,7 +38,9 @@ class Header extends Component {
         fetchSubPosts(props).then(posts => {
             this.setState({posts: posts});
             
-        })
+        });
+
+        fetchPostComments()
         
     }
 
@@ -61,13 +63,14 @@ class Header extends Component {
         })
 
 
-         const main = this.state.posts.map(post => {      
+         const main = this.state.posts.map(post => {     
             return (
                 <Main
                     key={post.data.id}
                     subreddit_title={post.data.subreddit_name_prefixed}
                     post_title={post.data.title}
                     post_preview={post.data.thumbnail}
+                    post_text={post.data.selftext}
                     num_comments={post.data.num_comments.toString()}
                     score={post.data.score.toString()}
                     author={post.data.author}
