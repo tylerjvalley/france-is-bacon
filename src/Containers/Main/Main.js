@@ -7,7 +7,6 @@ const main = (props) => {
     let preview_image;
 
     if (props.post_preview !== 'self') {
-        console.log(props.post_preview)
         preview_image = (<Image src={props.post_preview} />)
     } 
 
@@ -29,7 +28,7 @@ const main = (props) => {
                     {preview_image}
                 </div>
                 <div className="post-info">
-                    <Icon name="arrow alternate circle up outline" /> {props.score} <Icon name="arrow alternate circle down outline" /> {props.num_comments} <Icon name="comment outline" /> <br/>
+                    <Icon name="arrow alternate circle up outline" />{props.score}<Icon name="arrow alternate circle down outline" /> {props.num_comments} <Icon name="comment outline" /> <br/>
                     by {props.author} | 12 hours ago
                 </div>
 

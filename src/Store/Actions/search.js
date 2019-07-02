@@ -1,6 +1,7 @@
 import * as types from './types';
 
 
+
 export const search = (val) => {
     return {
         type: types.SEARCH_SUBREDDIT,
@@ -9,9 +10,12 @@ export const search = (val) => {
 }
 
 export const submit = (val) => {
-    return  {
+   
+    return {
         type: types.SUBMIT_SUBREDDIT,
         val: val
     }
+   
+    
 }
 

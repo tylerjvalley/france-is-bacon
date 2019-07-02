@@ -5,25 +5,39 @@ import { Grid } from 'semantic-ui-react';
 import SearchField from '../../Components/Search/Search';
 import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
-import { fetchSubPosts } from '../../Store/Actions/fetchSubs';
+import { fetchSubPosts, checkSubreddit } from '../../Store/Actions/fetchSubs';
 
 class Header extends Component {
 
     state = {
-        posts: []
+        posts: [],
+        isValid: true,
     }
 
-
+    
+    
     handleClick = (props) => {
-        this.props.onSubmit(props)
+
+        checkSubreddit(props).then(res => {
+            if (res === true) {
+                this.setState({isValid: true}, () => {
+                    this.props.onSubmit(props)
+                })
+            } else {
+                this.setState({isValid: false}, () => {
+                    alert('Invalid Subreddit')
+                })
+            }
+
+        })
+        
         
     }
 
     handleSubClick = (props) => {
         fetchSubPosts(props).then(posts => {
             this.setState({posts: posts});
-            console.log(this.state.posts[0].data)
-           
+            
         })
         
     }
