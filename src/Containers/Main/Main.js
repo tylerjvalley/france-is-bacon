@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon, Image } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
 
 const main = (props) => {
@@ -22,7 +23,7 @@ const main = (props) => {
                 <div className="post">
 
                     <h4 className="post-title">
-                        {props.post_title}
+                        <Link to="/post/">{props.post_title}</Link>
                     </h4>
                     
                     {preview_image}
