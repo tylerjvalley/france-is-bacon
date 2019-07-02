@@ -36,7 +36,13 @@
     margin: 1em;
 }
 
-
-.ui.search>.results>.message .header {
-    background: white;
+.ui.search>.results {
+    display: none;
+    width: 0px;
 }
+
+.ui.search>.results>.message {
+    display: none;
+    width: 0px;
+}
+
