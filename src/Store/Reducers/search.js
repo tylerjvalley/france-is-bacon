@@ -6,7 +6,7 @@ const initialState = {
     subreddits: [],
 }
 
-export const reducer = (state = initialState, action) => {
+ const reducer = (state = initialState, action) => {
     if (action.type) {
         switch (action.type) {
             case actions.SEARCH_SUBREDDIT:
@@ -42,5 +42,7 @@ export const reducer = (state = initialState, action) => {
         }
     }
 }
+
+export default reducer
 
 

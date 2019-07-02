@@ -47,10 +47,10 @@ export const fetchSubPosts = (sub) => {
 
 //fetch post comments...
 
-export const fetchPostComments = () => {
-    return axios.get(apiUrl + 'r/funny/comments/c87acm.json')
+export const fetchPostComments = (sub, post) => {
+    return axios.get(apiUrl + 'r/' + sub +'/comments/' + post +'.json')
         .then(res => {
-            console.log(res.data[1].data.children)
+            return res.data[1].data.children //array of comment objects with "kind" string and "data" object
         })
         .catch(error => {
             console.log(error)

@@ -39,10 +39,23 @@ class Header extends Component {
             this.setState({posts: posts});
             
         });
-
-        fetchPostComments()
         
     }
+
+    handlePostClick = (sub, id) => {
+        const commentsArray = [];
+
+       fetchPostComments(sub, id).then(res => {
+           res.map(comment => {
+               commentsArray.push(comment.data);
+               return commentsArray         
+           })
+           this.props.onClickPost(commentsArray);
+       })
+
+    }
+
+
 
     render () {
        
@@ -63,9 +76,10 @@ class Header extends Component {
         })
 
 
-         const main = this.state.posts.map(post => {     
+         const main = this.state.posts.map(post => {
             return (
                 <Main
+                    postClicked={() => this.handlePostClick(post.data.subreddit, post.data.id)}
                     key={post.data.id}
                     subreddit_title={post.data.subreddit_name_prefixed}
                     post_title={post.data.title}
@@ -110,8 +124,7 @@ const mapStateToProps = state => {
     return {
         src: state.src.searched,
         subs: state.src.subreddits,
-        
-        
+        coms: state.dis.comments 
     }
 }
 
@@ -119,6 +132,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onSearch: (e) => dispatch(actions.search(e)),
         onSubmit: (value) => dispatch(actions.submit(value)),
+        onClickPost: (comments) => dispatch(actions.displayPostComments(comments))
         
     }
 }

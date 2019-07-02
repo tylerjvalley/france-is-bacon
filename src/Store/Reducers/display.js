@@ -1,16 +1,16 @@
-/*import * as actionTypes from '../Actions/types';
+import * as actionTypes from '../Actions/types';
 
 
 const initialState = {
-    pending: false,
-    subs: [],
-    error: null
+    comments: []
 }
 
 const reducer = ( state = initialState, action ) => {
     if ( action.type ) {
         switch( action.type ) {
-            
+
+            case actionTypes.DISPLAY_POST_COMMENTS:
+                return state
                 
             
             default: 
@@ -22,4 +22,3 @@ const reducer = ( state = initialState, action ) => {
 
 export default reducer;
 
-*/

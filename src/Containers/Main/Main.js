@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const main = (props) => {
 
+    
     let preview_image;
 
     if (props.post_preview !== 'self') {
@@ -23,15 +24,16 @@ const main = (props) => {
                 <div className="post">
 
                     <h4 className="post-title">
-                        <Link to={{
-                            pathname: '/post/',
-                            state: {
-                                postTitle: props.post_title,
-                                image: props.post_preview,
-                                text: props.post_text,
-                                author: props.author,
-                                comments: props.comments
-                            }
+                        <Link onClick={props.postClicked}
+                              to={{
+                                    pathname: '/post/',
+                                    state: {
+                                        postTitle: props.post_title,
+                                        image: props.post_preview,
+                                        text: props.post_text,
+                                        author: props.author,
+                                        comments: props.comments
+                                }
                         }}>{props.post_title}</Link>
                     </h4>
                     
