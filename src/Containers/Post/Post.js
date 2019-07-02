@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Image } from 'semantic-ui-react'
+import { connect } from 'react-redux';
 
 
 class Post extends Component {
@@ -25,7 +26,21 @@ class Post extends Component {
         
     }
 
+
+
     render() {
+        
+        const comments = this.props.coms.map(com => {
+           return (
+               <div className="comment" key={com.id}>
+                    <p>By: {com.author}</p>
+                    <h4>{com.body}</h4>
+               </div>
+            )
+        })
+       
+
+
         return(
             <div className="single-post">
                 <Link to="/"><Button>Go Back</Button></Link>
@@ -33,18 +48,22 @@ class Post extends Component {
                     <h1>{this.state.postTitle}</h1>
                     <Image src={this.state.image} />
                     <p>{this.state.text}</p>
-                    <p>comment icons... upvote/downvote icons and score by {this.state.author}</p>
+                    <p>by: {this.state.author}</p>
                 </div>
                 <div className="comments">
-                    <p>username...comment score....time</p>
-                    <h4>user comment</h4>
+                    {comments}
                 </div>
-
-               
             </div>
         );
     }
 }
 
+const mapStateToProps = state => {
 
-export default Post;
+    return {
+        coms: state.dis.comments
+    }
+}
+
+
+export default connect(mapStateToProps)(Post);;

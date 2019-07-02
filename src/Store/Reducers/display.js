@@ -10,8 +10,16 @@ const reducer = ( state = initialState, action ) => {
         switch( action.type ) {
 
             case actionTypes.DISPLAY_POST_COMMENTS:
-                return state
+               
+                const newArray = action.comments.map(comment => {
+                    return comment
+                })
                 
+
+                return {
+                    ...state,
+                    comments: newArray
+                }
             
             default: 
                 return state;
