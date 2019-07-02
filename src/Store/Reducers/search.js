@@ -17,16 +17,22 @@ export const reducer = (state = initialState, action) => {
                 }
             
             case actions.SUBMIT_SUBREDDIT: 
-                
-                if (!state.subreddits.includes(action.val)) {
+                const foundExistingSubreddit = state.subreddits.some(
+                    subreddit => subreddit.toUpperCase() === action.val.toUpperCase()
+                )
+
+                if (!foundExistingSubreddit) {
                     return {
                         ...state,
-                        subreddits: state.subreddits.concat(action.val),
+                        subreddits: [...state.subreddits, action.val]
                     }
                 } else {
                     alert('Subreddit already chosen')
                     return state
                 }
+                
+                
+                
                 
               
                     
