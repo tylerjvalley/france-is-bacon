@@ -78,76 +78,96 @@ you can also overwrite styles by putting them below @extend
 
 you can also use + - / * math operators.
 */
+
+
+
 /* ---- VARIABLES ---- */
+
+$defaultColor: #005AA7;
 /* fallback for old browsers */
-/* Chrome 10-25, Safari 5.1-6 */
+$defaultColorGradient1: -webkit-linear-gradient(to top, #FFFDE4, rgb(248, 248, 248));
+ /* Chrome 10-25, Safari 5.1-6 */
+$defaultColorGradient2: linear-gradient(to top, rgb(248, 248, 248), #005AA7);
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+$nightThemeColor: #222;
+
+
 /* ---- DEFAULT THEME STYLES ---- */
-.header, .nightHeader {
-  background: #005AA7;
-  background: -webkit-gradient(linear, left bottom, left top, from(#f8f8f8), to(#005AA7));
-  background: linear-gradient(to top, #f8f8f8, #005AA7);
-  padding: 2em;
-  margin: auto;
-  margin-bottom: 2em;
+
+.header {
+    background: $defaultColor;
+    background: $defaultColorGradient1;
+    background: $defaultColorGradient2;
+    padding: 2em;
+    margin: auto;
+    margin-bottom: 2em;
+}
+.title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Carter One', cursive;
+    font-size: 3em;
+    padding: 1em;
+   
 }
 
-.title {
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-family: 'Carter One', cursive;
-  font-size: 3em;
-  padding: 1em;
-}
 
 .main-content {
-  margin-top: 10%;
-  border-top: 1px solid grey;
+    margin-top: 10%;
+    border-top: 1px solid grey;
 }
 
 .search-area {
-  width: 20%;
-  padding: 1em;
-  text-align: center;
-  margin: 2em auto;
+    width: 20%;
+    padding: 1em;
+    text-align: center;
+    margin: 2em auto;
 }
 
 .search {
-  margin: 1em;
+    margin: 1em;
 }
 
-.ui.search > .results {
-  display: none;
-  width: 0px;
+.ui.search>.results {
+    display: none;
+    width: 0px;
 }
 
-.ui.search > .results > .message {
-  display: none;
-  width: 0px;
+.ui.search>.results>.message {
+    display: none;
+    width: 0px;
 }
 
 .post {
-  padding: 4em 0;
-  text-align: center;
-  border-bottom: 1px solid grey;
+    padding: 4em 0;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    img {
+        display: inline;
+        width: 30%;
+    }
+    img.ui.image {
+        display: inline;
+    }
+
+    .post-title {
+        margin-top: 0;
+    }
 }
 
-.post img {
-  display: inline;
-  width: 30%;
-}
 
-.post img.ui.image {
-  display: inline;
-}
 
-.post .post-title {
-  margin-top: 0;
-}
+
+
+
+
+
 
 /* ---- NIGHT THEME STYLES ---- */
+
 .nightHeader {
-  background: #222;
+    @extend .header;
+    background: $nightThemeColor
 }
-/*# sourceMappingURL=App.css.map */

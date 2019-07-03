@@ -105,13 +105,16 @@ class Header extends Component {
                     search={this.props.onSearch}
                     clicked={() => this.handleClick(this.props.src)} /> 
             </div>
-                <Grid className="subreddit-selection" centered>
-                    <Grid.Row>
-                        {subreddits}
-                    </Grid.Row>
-                </Grid>
-
-                {main}
+            <Grid className="subreddit-selection" centered>
+                <Grid.Row>
+                    {subreddits}
+                </Grid.Row>
+            </Grid>
+            
+            <div className="main-content">
+                    {main}
+            </div>
+                
            </>
           
         ); 
