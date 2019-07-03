@@ -2,7 +2,7 @@ import * as actionTypes from '../Actions/types';
 
 
 const initialState = {
-    comments: []
+    comments: [],
 }
 
 const reducer = ( state = initialState, action ) => {
@@ -10,12 +10,12 @@ const reducer = ( state = initialState, action ) => {
         switch( action.type ) {
 
             case actionTypes.DISPLAY_POST_COMMENTS:
-               
+
                 const newArray = action.comments.map(comment => {
+                    
                     return comment
                 })
-                
-
+    
                 return {
                     ...state,
                     comments: newArray

@@ -31,10 +31,25 @@ class Post extends Component {
     render() {
         
         const comments = this.props.coms.map(com => {
+            let replies;
+            if (com.replies) {
+                 replies = com.replies.data.children.map(reply => {
+                    return (
+                        <div style={{background: 'grey', marginLeft: '15px'}} className="reply">
+                            <p>{reply.data.author}</p>
+                            <h4>{reply.data.body}</h4>
+                        </div>
+                    );
+                })
+                
+            }
+
            return (
                <div className="comment" key={com.id}>
                     <p>By: {com.author}</p>
                     <h4>{com.body}</h4>
+                   {replies}
+
                </div>
             )
         })
@@ -61,7 +76,8 @@ class Post extends Component {
 const mapStateToProps = state => {
 
     return {
-        coms: state.dis.comments
+        coms: state.dis.comments,
+        reps: state.dis.reps
     }
 }
 
