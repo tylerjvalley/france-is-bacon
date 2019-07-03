@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/france-is-bacon/precache-manifest.6454e0715f4205f2d625e48590d9b295.js"
+  "/france-is-bacon/precache-manifest.9d0ad5749f454c5c1c6c3d4c12829648.js"
 );
 
 self.addEventListener('message', (event) => {
