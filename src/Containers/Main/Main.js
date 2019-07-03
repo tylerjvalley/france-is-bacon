@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const main = (props) => {
 
     
+    
     let preview_image;
 
     if (props.post_preview !== 'self') {
@@ -34,7 +35,7 @@ const main = (props) => {
             {preview_image}
             
             <div className="post-info">
-                <Icon name="arrow alternate circle up outline" />{props.score}<Icon name="arrow alternate circle down outline" /> {props.num_comments} <Icon name="comment outline" /> <br/>
+                <Icon name="arrow alternate circle up outline" /><p className="score-num">{props.score}</p><Icon name="arrow alternate circle down outline" /> <p className="comment-num">{props.num_comments}</p> <Icon name="comment outline" /> <br/>
                 by {props.author} | 12 hours ago
             </div>
         </div>

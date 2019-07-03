@@ -134,16 +134,35 @@ you can also use + - / * math operators.
 }
 
 .post img {
-  display: inline;
-  width: 30%;
-}
-
-.post img.ui.image {
-  display: inline;
+  width: 140px;
+  height: 78px;
+  margin: auto;
 }
 
 .post .post-title {
   margin-top: 0;
+  font-size: 1.4em;
+}
+
+.post .post-info {
+  margin-top: 10px;
+}
+
+.post .post-info i {
+  font-size: 20px;
+}
+
+.post .post-info p {
+  display: inline;
+  font-size: 1.2em;
+}
+
+.post .post-info .comment-num {
+  margin-left: 2em;
+}
+
+.post .post-info .score-num {
+  margin-right: 5px;
 }
 
 /* ---- NIGHT THEME STYLES ---- */

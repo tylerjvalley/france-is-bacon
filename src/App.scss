@@ -145,18 +145,40 @@ $nightThemeColor: #222;
     text-align: center;
     border-bottom: 1px solid grey;
     img {
-        display: inline;
-        width: 30%;
+        width: 140px;
+        height: 78px;
+        margin: auto;
     }
-    img.ui.image {
-        display: inline;
-    }
+    
 
     .post-title {
         margin-top: 0;
+        font-size: 1.4em;
+    }
+
+    .post-info {
+        margin-top: 10px;
+
+        i {
+            font-size: 20px;
+        }
+
+        p {
+            display: inline;
+            font-size: 1.2em;
+           
+        }
+
+        .comment-num {
+            margin-left: 2em;
+        }
+
+        .score-num {
+            margin-right: 5px;
+        }
+        
     }
 }
-
 
 
 
