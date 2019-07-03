@@ -4,10 +4,12 @@ const apiUrl = 'https://www.reddit.com/';
 
 
 
+
+
 //check if subreddit exists 
 
 export const checkSubreddit = (sub) => {
-
+   
     return axios.get(apiUrl + 'r/' + sub + '/about.json')
         .then(res => {
             return true
@@ -20,7 +22,7 @@ export const checkSubreddit = (sub) => {
 }
 //fetch subreddit icon images
 export const fetchSubImages = (sub) => {
-    
+
      return axios.get(apiUrl + 'r/' + sub + '/about.json')
         .then(res => {
             return res.data.data.icon_img
@@ -35,6 +37,7 @@ export const fetchSubImages = (sub) => {
 //fetch posts...
 
 export const fetchSubPosts = (sub) => {
+    
     return axios.get(apiUrl + 'r/' + sub + '/top.json')
         .then(res => {
              return res.data.data.children //top 25 posts
@@ -48,6 +51,7 @@ export const fetchSubPosts = (sub) => {
 //fetch post comments...
 
 export const fetchPostComments = (sub, post) => {
+    
     return axios.get(apiUrl + 'r/' + sub +'/comments/' + post +'.json')
         .then(res => {
             return res.data[1].data.children //array of comment objects with "kind" string and "data" object

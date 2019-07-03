@@ -10,10 +10,17 @@ const initialState = {
     if (action.type) {
         switch (action.type) {
             case actions.SEARCH_SUBREDDIT:
+
+                let editedSearch
+                if (action.val.includes('r/')) {
+                    editedSearch = action.val.replace('r/', '')
+                } else {
+                    editedSearch = action.val;
+                }
                 
                 return {
                     ...state,
-                    searched: action.val
+                    searched: editedSearch
                 }
             
             case actions.SUBMIT_SUBREDDIT: 

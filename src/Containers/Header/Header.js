@@ -17,8 +17,14 @@ class Header extends Component {
     
     
     handleClick = (props) => {
+        let editedSearch
+        if (props.includes('r/')) {
+            editedSearch = props.replace('r/', '')
+        } else {
+            editedSearch = props;
+        }
 
-        checkSubreddit(props).then(res => {
+        checkSubreddit(editedSearch).then(res => {
             if (res === true) {
                 this.setState({isValid: true}, () => {
                     this.props.onSubmit(props)
@@ -43,6 +49,7 @@ class Header extends Component {
     }
 
     handlePostClick = (sub, id) => {
+        
         const commentsArray = [];
 
        fetchPostComments(sub, id).then(res => {
