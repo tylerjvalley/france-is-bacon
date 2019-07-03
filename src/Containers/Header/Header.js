@@ -17,14 +17,8 @@ class Header extends Component {
     
     
     handleClick = (props) => {
-        let editedSearch
-        if (props.includes('r/')) {
-            editedSearch = props.replace('r/', '')
-        } else {
-            editedSearch = props;
-        }
-
-        checkSubreddit(editedSearch).then(res => {
+        
+        checkSubreddit(props).then(res => {
             if (res === true) {
                 this.setState({isValid: true}, () => {
                     this.props.onSubmit(props)
