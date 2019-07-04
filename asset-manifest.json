@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/france-is-bacon/static/css/main.c036340e.chunk.css",
-    "main.js": "/france-is-bacon/static/js/main.dd7e2ed4.chunk.js",
-    "main.js.map": "/france-is-bacon/static/js/main.dd7e2ed4.chunk.js.map",
+    "main.css": "/france-is-bacon/static/css/main.d33b2cee.chunk.css",
+    "main.js": "/france-is-bacon/static/js/main.365b17b9.chunk.js",
+    "main.js.map": "/france-is-bacon/static/js/main.365b17b9.chunk.js.map",
     "runtime~main.js": "/france-is-bacon/static/js/runtime~main.33930fee.js",
     "runtime~main.js.map": "/france-is-bacon/static/js/runtime~main.33930fee.js.map",
     "static/css/2.01c256ea.chunk.css": "/france-is-bacon/static/css/2.01c256ea.chunk.css",
     "static/js/2.bbb129df.chunk.js": "/france-is-bacon/static/js/2.bbb129df.chunk.js",
     "static/js/2.bbb129df.chunk.js.map": "/france-is-bacon/static/js/2.bbb129df.chunk.js.map",
     "index.html": "/france-is-bacon/index.html",
-    "precache-manifest.1fb35c4e4fc42c7525dd97e9cf5a13bb.js": "/france-is-bacon/precache-manifest.1fb35c4e4fc42c7525dd97e9cf5a13bb.js",
+    "precache-manifest.04a089f904314271d9cc166ce9091a54.js": "/france-is-bacon/precache-manifest.04a089f904314271d9cc166ce9091a54.js",
     "service-worker.js": "/france-is-bacon/service-worker.js",
     "static/css/2.01c256ea.chunk.css.map": "/france-is-bacon/static/css/2.01c256ea.chunk.css.map",
-    "static/css/main.c036340e.chunk.css.map": "/france-is-bacon/static/css/main.c036340e.chunk.css.map",
+    "static/css/main.d33b2cee.chunk.css.map": "/france-is-bacon/static/css/main.d33b2cee.chunk.css.map",
     "static/media/semantic.min.css": "/france-is-bacon/static/media/outline-icons.ef60a4f6.woff"
   }
 }
