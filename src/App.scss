@@ -122,13 +122,20 @@ $nightThemeColor: #222;
 .search-area {
     width: 20%;
     padding: 1em;
-    text-align: center;
-    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    .button {
+        margin-top: 1em;
+    }
+
 }
 
-.search {
-    margin: 1em;
-}
+
+
 
 .ui.search>.results {
     display: none;
@@ -145,8 +152,8 @@ $nightThemeColor: #222;
     text-align: center;
     border-bottom: 1px solid grey;
     img {
-        width: 140px;
-        height: 78px;
+        width: 25%;
+        height: 25%;
         margin: auto;
     }
     

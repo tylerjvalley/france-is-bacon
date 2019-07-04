@@ -78,13 +78,28 @@ class Header extends Component {
 
 
          const main = this.state.posts.map(post => {
+                    
+            let previewData, postLink;
+
+            if (post.data.url.includes('.jpg') || post.data.url.includes('.png')) {
+                previewData = post.data.url;
+                postLink = null
+            } else if (post.data.is_self) {
+                previewData = null;
+                postLink = null;
+            } else {
+                 postLink = `http://www.reddit.com${post.data.permalink}`;
+                 previewData = null;
+             } 
+             
             return (
                 <Main
                     postClicked={() => this.handlePostClick(post.data.subreddit, post.data.id)}
                     key={post.data.id}
                     subreddit_title={post.data.subreddit_name_prefixed}
                     post_title={post.data.title}
-                    post_preview={post.data.thumbnail}
+                    post_link={postLink}
+                    post_preview={previewData}
                     post_text={post.data.selftext}
                     num_comments={post.data.num_comments.toString()}
                     score={post.data.score.toString()}
@@ -110,7 +125,7 @@ class Header extends Component {
                     {subreddits}
                 </Grid.Row>
             </Grid>
-            
+
             <div className="main-content">
                     {main}
             </div>

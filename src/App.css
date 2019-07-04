@@ -109,12 +109,24 @@ you can also use + - / * math operators.
 .search-area {
   width: 20%;
   padding: 1em;
-  text-align: center;
-  margin: 2em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
 }
 
-.search {
-  margin: 1em;
+.search-area .button {
+  margin-top: 1em;
 }
 
 .ui.search > .results {
@@ -134,8 +146,8 @@ you can also use + - / * math operators.
 }
 
 .post img {
-  width: 140px;
-  height: 78px;
+  width: 25%;
+  height: 25%;
   margin: auto;
 }
 

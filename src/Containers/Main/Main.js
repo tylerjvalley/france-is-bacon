@@ -7,30 +7,54 @@ const main = (props) => {
 
     
     
-    let preview_image;
+    let preview_image, post_title;
 
     if (props.post_preview !== 'self') {
         preview_image = (<Image src={props.post_preview} />)
-    } 
+    } else {
+        preview_image = (<Image style={{display: 'none'}} />)
+    }
+
+    if (props.post_link) {
+
+        post_title = (
+            
+            <h4 className="post-title">
+                <a href={props.post_link} target="blank">
+                    {props.post_title}
+                 </a>
+            </h4>
+       
+        ); 
+    } else {
+        post_title = (
+            <h4 className="post-title">
+                <Link onClick={props.postClicked}
+                    to={{
+                        pathname: '/post/',
+                        state: {
+                            postTitle: props.post_title,
+                            image: props.post_preview,
+                            text: props.post_text,
+                            author: props.author,
+                            comments: props.comments
+                        }
+                    }}>{props.post_title}</Link>
+            </h4>
+        );
+    }
+
+    
+    
 
     return (
    
         <div className="post">
 
             <h4>{props.subreddit_title}</h4>
-            <h4 className="post-title">
-                <Link onClick={props.postClicked}
-                        to={{
-                            pathname: '/post/',
-                            state: {
-                                postTitle: props.post_title,
-                                image: props.post_preview,
-                                text: props.post_text,
-                                author: props.author,
-                                comments: props.comments
-                        }
-                }}>{props.post_title}</Link>
-            </h4>
+           
+                {post_title}
+          
                 
             {preview_image}
             
