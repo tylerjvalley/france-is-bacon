@@ -34,23 +34,28 @@ class Post extends Component {
             let replies;
             if (com.replies) {
                  replies = com.replies.data.children.map(reply => {
+                    
                     return (
-                        <div style={{background: 'grey', marginLeft: '15px'}} key={reply.data.id} className="reply">
+                        <div key={reply.data.id} className="reply">
                             <p>{reply.data.author}</p>
                             <h4>{reply.data.body}</h4>
                         </div>
-                    );
+                    );   
+                    
                 })
                 
             }
 
            return (
+               <>
                <div className="comment" key={com.id}>
-                    <p>By: {com.author}</p>
+                    <p>{com.author}</p>
                     <h4>{com.body}</h4>
-                   {replies}
-
+                   
                </div>
+               { replies }
+               <hr />
+               </>
             )
         })
        

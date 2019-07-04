@@ -189,6 +189,40 @@ $nightThemeColor: #222;
 
 
 
+/* ---Comments--- */
+
+.single-post-header {
+    padding-bottom: 5em;
+    border-bottom: 1px solid black;
+
+}
+
+.comments {
+
+    .comment {
+        margin-top: 0;
+        padding: 2em;
+        
+
+        p {
+            margin: 0;
+            padding: 1em;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+    }
+
+    .reply {
+        background: white;
+        margin: 0 6em;
+        border-left: 1px solid grey;
+        padding: 1em;
+    }
+}
+
 
 
 
