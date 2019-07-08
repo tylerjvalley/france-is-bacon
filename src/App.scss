@@ -117,6 +117,20 @@ $nightThemeColor: #3b444b;
    
 }
 
+.subreddit-title-default {
+    color: #005AA7;
+}
+
+.post-title-default a {
+    font-size: 20px;
+    color: #005AA7;
+}
+
+.default-post-title a:hover {
+    color: #005AA7;
+    text-decoration: underline;
+}
+
 
 .main-content {
     margin-top: 10%;
@@ -156,6 +170,7 @@ $nightThemeColor: #3b444b;
     padding: 4em 0;
     text-align: center;
     border-bottom: 1px solid grey;
+
     img {
         width: 25%;
         height: 25%;
@@ -164,8 +179,9 @@ $nightThemeColor: #3b444b;
     
 
     .post-title {
-        margin-top: 0;
+        text-align: center;
         font-size: 1.4em;
+        
     }
 
     .post-info {
@@ -192,7 +208,9 @@ $nightThemeColor: #3b444b;
     }
 }
 
-
+.post-title-default {
+    text-align: center;
+}
 
 /* ---Comments--- */
 
@@ -221,7 +239,7 @@ $nightThemeColor: #3b444b;
     }
 
     .reply {
-        background: white;
+
         margin: 0 6em;
         border-left: 1px solid grey;
         padding: 1em;
@@ -257,4 +275,38 @@ $nightThemeColor: #3b444b;
 
 .App-Night {
     background: $nightThemeColor;
+}
+
+.subreddit-title-night {
+    color: white;
+}
+
+.post-title-night a {
+    font-size: 20px;
+    color: white;
+}
+
+.post-title-night a:hover {
+    color: white;
+    text-transform: underline;
+}
+
+.comments-night {
+    @extend .comments;
+    color: white;
+}
+
+.replies-night {
+    @extend .reply;
+    color: white;
+    background: $nightThemeColor;
+}
+
+.post-title-night {
+    text-align: center;
+    color: white;
+}
+
+.subtext-night {
+    color: white;
 }

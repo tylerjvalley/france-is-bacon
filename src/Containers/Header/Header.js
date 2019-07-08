@@ -64,6 +64,25 @@ class Header extends Component {
 
 
     render () {
+
+        /* Change Theme */
+
+        let headerTheme, mainTheme, subTheme, post_title, sub_title_styles;
+
+        if (this.props.theme === 'default') {
+            headerTheme = 'header';
+            mainTheme = 'main-content';
+            subTheme = 'subreddit-selection';
+            post_title = 'post-title-default';
+            sub_title_styles = 'subreddit-title-default';
+
+        } else if (this.props.theme === 'night') {
+            headerTheme = 'nightHeader';
+            mainTheme = 'main-content-night';
+            subTheme = 'sub-theme-night';
+            post_title = 'post-title-night';
+            sub_title_styles = 'subreddit-title-night';
+        }
        
         let subreddits;
 
@@ -80,6 +99,8 @@ class Header extends Component {
 
 
         })
+
+      
 
 
          const main = this.state.posts.map(post => {
@@ -99,6 +120,8 @@ class Header extends Component {
              
             return (
                 <Main
+                    subreddit_title_styles={sub_title_styles}
+                    title_styles={post_title}
                     postClicked={() => this.handlePostClick(post.data.subreddit, post.data.id)}
                     key={post.data.id}
                     subreddit_title={post.data.subreddit_name_prefixed}
@@ -114,18 +137,8 @@ class Header extends Component {
             )
         })
 
-        let headerTheme, mainTheme, subTheme;
 
-        if (this.props.theme === 'default') {
-            headerTheme = 'header';
-            mainTheme = 'main-content';
-            subTheme = 'subreddit-selection';
-            
-        } else if (this.props.theme === 'night') {
-            headerTheme = 'nightHeader';
-            mainTheme = 'main-content-night';
-            subTheme = 'sub-theme-night';
-        }
+       
        
        
 

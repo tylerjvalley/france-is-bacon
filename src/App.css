@@ -105,6 +105,20 @@ you can also use + - / * math operators.
   padding: 1em;
 }
 
+.subreddit-title-default {
+  color: #005AA7;
+}
+
+.post-title-default a {
+  font-size: 20px;
+  color: #005AA7;
+}
+
+.default-post-title a:hover {
+  color: #005AA7;
+  text-decoration: underline;
+}
+
 .main-content, .main-content-night {
   margin-top: 10%;
   border-top: 1px solid grey;
@@ -157,7 +171,7 @@ you can also use + - / * math operators.
 }
 
 .post .post-title {
-  margin-top: 0;
+  text-align: center;
   font-size: 1.4em;
 }
 
@@ -182,28 +196,31 @@ you can also use + - / * math operators.
   margin-right: 5px;
 }
 
+.post-title-default {
+  text-align: center;
+}
+
 /* ---Comments--- */
 .single-post-header {
   padding-bottom: 5em;
   border-bottom: 1px solid black;
 }
 
-.comments .comment {
+.comments .comment, .comments-night .comment {
   margin-top: 0;
   padding: 2em;
 }
 
-.comments .comment p {
+.comments .comment p, .comments-night .comment p {
   margin: 0;
   padding: 1em;
 }
 
-.comments .comment h4 {
+.comments .comment h4, .comments-night .comment h4 {
   margin: 0;
 }
 
-.comments .reply {
-  background: white;
+.comments .reply, .comments-night .reply, .comments .replies-night, .comments-night .replies-night {
   margin: 0 6em;
   border-left: 1px solid grey;
   padding: 1em;
@@ -230,5 +247,37 @@ you can also use + - / * math operators.
 
 .App-Night {
   background: #3b444b;
+}
+
+.subreddit-title-night {
+  color: white;
+}
+
+.post-title-night a {
+  font-size: 20px;
+  color: white;
+}
+
+.post-title-night a:hover {
+  color: white;
+  text-transform: underline;
+}
+
+.comments-night {
+  color: white;
+}
+
+.replies-night {
+  color: white;
+  background: #3b444b;
+}
+
+.post-title-night {
+  text-align: center;
+  color: white;
+}
+
+.subtext-night {
+  color: white;
 }
 /*# sourceMappingURL=App.css.map */

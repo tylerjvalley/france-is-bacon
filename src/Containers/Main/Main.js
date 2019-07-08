@@ -19,7 +19,7 @@ const main = (props) => {
 
         post_title = (
             
-            <h4 className="post-title">
+            <h4 className={props.title_styles}>
                 <a href={props.post_link} target="blank">
                     {props.post_title}
                  </a>
@@ -28,7 +28,7 @@ const main = (props) => {
         ); 
     } else {
         post_title = (
-            <h4 className="post-title">
+            <h4 className={props.title_styles}>
                 <Link onClick={props.postClicked}
                     to={{
                         pathname: '/post/',
@@ -51,14 +51,14 @@ const main = (props) => {
    
         <div className="post">
 
-            <h4>{props.subreddit_title}</h4>
+            <h4 className={props.subreddit_title_styles}>{props.subreddit_title}</h4>
            
                 {post_title}
           
                 
             {preview_image}
             
-            <div className="post-info">
+            <div className={[props.subreddit_title_styles, 'post-info'].join(' ')}>
                 <Icon name="arrow alternate circle up outline" /><p className="score-num">{props.score}</p><Icon name="arrow alternate circle down outline" /> <p className="comment-num">{props.num_comments}</p> <Icon name="comment outline" /> <br/>
                 by {props.author} | 12 hours ago
             </div>

@@ -29,6 +29,20 @@ class Post extends Component {
 
 
     render() {
+
+        let commentStyle, replyStyle, titleStyle, subtext_styles;
+
+        if (this.props.theme === 'default') {
+            commentStyle = 'comments';
+            replyStyle = 'reply';
+            titleStyle = 'post-title-default';
+            subtext_styles = 'subtext';
+        } else if (this.props.theme === 'night'){
+            commentStyle = 'comments-night';
+            replyStyle = 'replies-night';
+            titleStyle = 'post-title-night';
+            subtext_styles = 'subtext-night';
+        }
         
         const comments = this.props.coms.map(com => {
             let replies;
@@ -36,7 +50,7 @@ class Post extends Component {
                  replies = com.replies.data.children.map(reply => {
                     
                     return (
-                        <div key={reply.data.id} className="reply">
+                        <div key={reply.data.id} className={replyStyle}>
                             <p>{reply.data.author}</p>
                             <h4>{reply.data.body}</h4>
                         </div>
@@ -48,7 +62,7 @@ class Post extends Component {
 
            return (
                <>
-               <div className="comment" key={com.id}>
+               <div className={commentStyle} key={com.id}>
                     <p>{com.author}</p>
                     <h4>{com.body}</h4>
                    
@@ -65,10 +79,10 @@ class Post extends Component {
             <div className="single-post">
                 <Link to="/"><Button>Go Back</Button></Link>
                 <div className="single-post-header">
-                    <h1>{this.state.postTitle}</h1>
+                    <h1 className={titleStyle}>{this.state.postTitle}</h1>
                     <Image src={this.state.image} />
-                    <p>{this.state.text}</p>
-                    <p>by: {this.state.author}</p>
+                    <p className={subtext_styles}>{this.state.text}</p>
+                    <p className={subtext_styles}>by: {this.state.author}</p>
                 </div>
                 <div className="comments">
                     {comments}
@@ -82,7 +96,8 @@ const mapStateToProps = state => {
 
     return {
         coms: state.dis.comments,
-        reps: state.dis.reps
+        reps: state.dis.reps,
+        theme: state.dis.theme
     }
 }
 
