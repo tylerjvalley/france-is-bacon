@@ -1,4 +1,4 @@
 export { search, submit } from './search';
-export { displayPostComments } from './display';
+export { displayPostComments, displayTheme } from './display';
 export { fetchSubImages } from './fetchSubs';
  

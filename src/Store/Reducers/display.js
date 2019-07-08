@@ -3,6 +3,7 @@ import * as actionTypes from '../Actions/types';
 
 const initialState = {
     comments: [],
+    theme: 'default'
 }
 
 const reducer = ( state = initialState, action ) => {
@@ -19,6 +20,13 @@ const reducer = ( state = initialState, action ) => {
                 return {
                     ...state,
                     comments: newArray
+                }
+
+                case actionTypes.DISPLAY_THEME:
+                
+                return {
+                    ...state,
+                    theme: action.theme
                 }
             
             default: 

@@ -83,6 +83,10 @@ you can also use + - / * math operators.
 /* Chrome 10-25, Safari 5.1-6 */
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 /* ---- DEFAULT THEME STYLES ---- */
+.App {
+  background: white;
+}
+
 .header, .nightHeader {
   background: #005AA7;
   background: -webkit-gradient(linear, left bottom, left top, from(#f8f8f8), to(#005AA7));
@@ -101,7 +105,7 @@ you can also use + - / * math operators.
   padding: 1em;
 }
 
-.main-content {
+.main-content, .main-content-night {
   margin-top: 10%;
   border-top: 1px solid grey;
 }
@@ -125,8 +129,9 @@ you can also use + - / * math operators.
   margin: auto;
 }
 
-.search-area .button {
+.search-area .ui.button {
   margin-top: 1em;
+  background: white;
 }
 
 .ui.search > .results {
@@ -204,8 +209,26 @@ you can also use + - / * math operators.
   padding: 1em;
 }
 
+/* ---- THEME CHANGER BOX ---- */
+.ui.compact.menu {
+  position: absolute;
+  top: 20%;
+}
+
 /* ---- NIGHT THEME STYLES ---- */
 .nightHeader {
-  background: #222;
+  background: #3b444b;
+}
+
+.main-content-night {
+  background: #3b444b;
+}
+
+.sub-theme-night {
+  background: #3b444b;
+}
+
+.App-Night {
+  background: #3b444b;
 }
 /*# sourceMappingURL=App.css.map */

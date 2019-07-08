@@ -7,3 +7,11 @@ export const displayPostComments = comments => {
         comments: comments
     }
 }
+
+
+export const displayTheme = theme => {
+    return {
+        type: types.DISPLAY_THEME,
+        theme: theme
+    }
+}

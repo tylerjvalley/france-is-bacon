@@ -5,6 +5,7 @@ import { Grid } from 'semantic-ui-react';
 import SearchField from '../../Components/Search/Search';
 import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
+//import ThemeChange from '../../Components/ThemeChange/ThemeChange';
 import { fetchSubPosts, checkSubreddit, fetchPostComments } from '../../Store/Actions/fetchSubs';
 
 class Header extends Component {
@@ -54,6 +55,10 @@ class Header extends Component {
            this.props.onClickPost(commentsArray);
        })
 
+    }
+
+    handleThemeSelect = (theme) => {
+        this.props.onSelectTheme(theme);
     }
 
 
@@ -108,25 +113,64 @@ class Header extends Component {
                 />    
             )
         })
-       
 
+        let headerTheme, mainTheme, subTheme;
+
+        if (this.props.theme === 'default') {
+            headerTheme = 'header';
+            mainTheme = 'main-content';
+            subTheme = 'subreddit-selection';
+            
+        } else if (this.props.theme === 'night') {
+            headerTheme = 'nightHeader';
+            mainTheme = 'main-content-night';
+            subTheme = 'sub-theme-night';
+        }
+       
+       
 
         return (
             <>
 
-            <div className="header">
+            <div className={headerTheme}>
                 <h1 className="title">France Is Bacon</h1>
                 <SearchField 
                     search={this.props.onSearch}
                     clicked={() => this.handleClick(this.props.src)} /> 
+                <div className="ui compact menu">
+                    <div role="listbox" aria-expanded="false" className="ui item simple dropdown" tabIndex="0">
+                        <div className="text" role="alert" aria-live="polite" aria-atomic="true">Change Theme</div>
+                        <i aria-hidden="true" className="dropdown icon"></i>
+                        <div className="menu transition">
+                            <div
+                                aria-checked="false"
+                                aria-selected="true"
+                                className="selected item"
+                                onClick={() => this.handleThemeSelect('default')}
+                            >
+                                <span className="text">Default Theme</span>
+                            </div>
+                            <div
+                                aria-checked="false"
+                                aria-selected="false"
+                                className="item"
+                                onClick={() => this.handleThemeSelect('night')}
+                            >
+                                <span className="text">Night Theme</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-            <Grid className="subreddit-selection" centered>
+            
+            <Grid className={subTheme} centered>
                 <Grid.Row>
                     {subreddits}
                 </Grid.Row>
             </Grid>
 
-            <div className="main-content">
+            <div className={mainTheme}>
                     {main}
             </div>
                 
@@ -143,7 +187,8 @@ const mapStateToProps = state => {
     return {
         src: state.src.searched,
         subs: state.src.subreddits,
-        coms: state.dis.comments 
+        coms: state.dis.comments ,
+        theme: state.dis.theme
     }
 }
 
@@ -151,7 +196,8 @@ const mapDispatchToProps = dispatch => {
     return {
         onSearch: (e) => dispatch(actions.search(e)),
         onSubmit: (value) => dispatch(actions.submit(value)),
-        onClickPost: (comments) => dispatch(actions.displayPostComments(comments))
+        onClickPost: (comments) => dispatch(actions.displayPostComments(comments)),
+        onSelectTheme: (theme) => dispatch(actions.displayTheme(theme))
         
     }
 }

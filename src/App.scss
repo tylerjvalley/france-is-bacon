@@ -90,10 +90,14 @@ $defaultColorGradient1: -webkit-linear-gradient(to top, #FFFDE4, rgb(248, 248, 2
 $defaultColorGradient2: linear-gradient(to top, rgb(248, 248, 248), #005AA7);
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-$nightThemeColor: #222;
+$nightThemeColor: #3b444b;
 
 
 /* ---- DEFAULT THEME STYLES ---- */
+
+.App {
+    background: white;
+}
 
 .header {
     background: $defaultColor;
@@ -128,8 +132,9 @@ $nightThemeColor: #222;
     align-items: center;
     margin: auto;
 
-    .button {
+    .ui.button {
         margin-top: 1em;
+        background: white;
     }
 
 }
@@ -224,6 +229,12 @@ $nightThemeColor: #222;
 }
 
 
+/* ---- THEME CHANGER BOX ---- */
+
+.ui.compact.menu {
+    position: absolute;
+    top: 20%;
+}
 
 
 
@@ -233,4 +244,17 @@ $nightThemeColor: #222;
 .nightHeader {
     @extend .header;
     background: $nightThemeColor
+}
+
+.main-content-night {
+    @extend .main-content;
+    background: $nightThemeColor;
+}
+
+.sub-theme-night {
+    background: $nightThemeColor;
+}
+
+.App-Night {
+    background: $nightThemeColor;
 }
