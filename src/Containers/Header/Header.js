@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react';
 import SearchField from '../../Components/Search/Search';
 import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
-//import ThemeChange from '../../Components/ThemeChange/ThemeChange';
+import { Container } from 'semantic-ui-react';
 import { fetchSubPosts, checkSubreddit, fetchPostComments } from '../../Store/Actions/fetchSubs';
 
 class Header extends Component {
@@ -176,17 +176,18 @@ class Header extends Component {
                     </div>
                 </div>
             </div>
+            <Container>
             
-            <Grid className={subTheme} centered>
-                <Grid.Row>
-                    {subreddits}
-                </Grid.Row>
-            </Grid>
+                <Grid className={subTheme} centered>
+                    <Grid.Row>
+                        {subreddits}
+                    </Grid.Row>
+                </Grid>
 
-            <div className={mainTheme}>
-                    {main}
-            </div>
-                
+                <div className={mainTheme}>
+                        {main}
+                </div>
+           </Container>
            </>
           
         ); 
