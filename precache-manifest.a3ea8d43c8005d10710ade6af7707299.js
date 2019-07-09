@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "468d431127c73a25ee1e297d9f4b4c6e",
+    "revision": "50119daa5fb3483061f538751d9bf4f0",
     "url": "/france-is-bacon/index.html"
   },
   {
