@@ -17,11 +17,12 @@ const initialState = {
                 } else {
                     editedSearch = action.val;
                 }
-                
+               
                 return {
                     ...state,
                     searched: editedSearch
                 }
+                
             
             case actions.SUBMIT_SUBREDDIT: 
                 const foundExistingSubreddit = state.subreddits.some(
@@ -29,14 +30,18 @@ const initialState = {
                 )
 
                 if (!foundExistingSubreddit) {
+                
                     return {
                         ...state,
                         subreddits: [...state.subreddits, action.val]
                     }
+                    
                 } else {
                     alert('Subreddit already chosen')
                     return state
                 }
+
+               
                 
                 
                 

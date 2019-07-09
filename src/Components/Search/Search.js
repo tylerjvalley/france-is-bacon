@@ -4,12 +4,11 @@ import { Search, Button } from 'semantic-ui-react';
 
 class SearchField extends Component {
 
-
-    state = {}
-
+   
     handleSubmit = (e) => {
         e.preventDefault();
     }
+
 
    render() {
 
@@ -18,6 +17,8 @@ class SearchField extends Component {
         <form onSubmit={(e) => this.handleSubmit(e)}>
             <div className="search-area">
                 <Search
+                    id="search-bar"
+                    showNoResults={false}
                     onSearchChange={(e) => this.props.search(e.target.value)} />
                 <Button onClick={this.props.clicked}>Add Subreddit</Button>
             </div>

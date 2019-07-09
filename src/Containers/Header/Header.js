@@ -22,7 +22,8 @@ class Header extends Component {
        })
        
     }
-    
+
+   
     
     handleClick = (props) => {
         
@@ -31,6 +32,7 @@ class Header extends Component {
                 this.setState({isValid: true}, () => {
                     this.props.onSubmit(props)
                 })
+               
             } else {
                 this.setState({isValid: false}, () => {
                     alert('Invalid Subreddit')
@@ -38,15 +40,12 @@ class Header extends Component {
             }
 
         })
-     
-        
         
     }
 
     handleSubClick = (props) => {
         fetchSubPosts(props).then(posts => {
             this.setState({posts: posts});
-            
         });
 
        
@@ -169,35 +168,39 @@ class Header extends Component {
                 <SearchField 
                     search={this.props.onSearch}
                     clicked={() => this.handleClick(this.props.src)} /> 
-                <div className="ui compact menu">
-                    <div role="listbox" aria-expanded="false" className="ui item simple dropdown" tabIndex="0">
-                        <div className="text" role="alert" aria-live="polite" aria-atomic="true">Change Theme</div>
-                        <i aria-hidden="true" className="dropdown icon"></i>
-                        <div className="menu transition">
-                            <div
-                                aria-checked="false"
-                                aria-selected="true"
-                                className="selected item"
-                                onClick={() => this.handleThemeSelect('default')}
-                            >
-                                <span className="text">Default Theme</span>
-                            </div>
-                            <div
-                                aria-checked="false"
-                                aria-selected="false"
-                                className="item"
-                                onClick={() => this.handleThemeSelect('night')}
-                            >
-                                <span className="text">Night Theme</span>
-                            </div>
 
+                    <div className="ui compact menu">
+                        <div role="listbox" aria-expanded="false" className="ui item simple dropdown" tabIndex="0">
+                            <div className="text" role="alert" aria-live="polite" aria-atomic="true">Change Theme</div>
+                            <i aria-hidden="true" className="dropdown icon"></i>
+                            <div className="menu transition">
+                                <div
+                                    aria-checked="false"
+                                    aria-selected="true"
+                                    className="selected item"
+                                    onClick={() => this.handleThemeSelect('default')}
+                                >
+                                    <span className="text">Default Theme</span>
+                                </div>
+                                <div
+                                    aria-checked="false"
+                                    aria-selected="false"
+                                    className="item"
+                                    onClick={() => this.handleThemeSelect('night')}
+                                >
+                                    <span className="text">Night Theme</span>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+
+
             </div>
            
             
-            <div className={subTheme} centered>
+            
+            <div className={subTheme}>
                 <div className="grid-row">
                     <Subreddits
                         clicked={() => this.handleAllClick()}
