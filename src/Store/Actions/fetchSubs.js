@@ -33,14 +33,18 @@ export const checkSubreddit = (sub) => {
 }
 //fetch subreddit icon images
 export const fetchSubImages = (sub) => {
-
+    
      return axios.get(apiUrl + 'r/' + sub + '/about.json')
         .then(res => {
+           
             return res.data.data.icon_img
+            
+           
         })
         .catch(error => {
             console.log(error);
         })
+    
         
 
 }

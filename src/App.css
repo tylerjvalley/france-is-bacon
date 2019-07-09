@@ -105,6 +105,120 @@ you can also use + - / * math operators.
   padding: 1em;
 }
 
+/* ---SUBREDDIT ICONS--- */
+.subreddit-selection {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0;
+}
+
+.grid-row {
+  text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100% !important;
+  padding: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.sub-column {
+  text-align: left;
+  width: 12.5% !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  display: inline-block;
+  width: 6.25%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  vertical-align: top;
+}
+
+.subreddit-icon {
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+.subreddit-icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.subreddit-icon img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+.subreddit-icon .ribbon {
+  left: calc(.05rem - 1.2em);
+  top: 0;
+  border-color: #005AA7 !important;
+  position: absolute;
+  background-color: #005AA7 !important;
+  color: #fff !important;
+  margin-right: -1.2em;
+  padding-left: calc(1rem + 1.2em);
+  padding-right: 1.2em;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  border-radius: 0 .28571429rem .28571429rem 0;
+  font-size: .85714286rem;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+  background-image: none;
+  padding: .5833em .833em;
+  text-transform: none;
+  font-weight: 700;
+  border: 0 solid transparent;
+  -webkit-transition: background .1s ease;
+  transition: background .1s ease;
+  text-decoration: none;
+}
+
+/*------------------------------*/
 .subreddit-title-default {
   color: #005AA7;
 }
@@ -280,4 +394,29 @@ you can also use + - / * math operators.
 .subtext-night {
   color: white;
 }
+
+/* ----MEDIA QUERIES---- */
+@media (max-width: 700px) {
+  .subreddit-selection {
+    margin: 0;
+  }
+  .sub-column {
+    -webkit-box-flex: .5;
+        -ms-flex-positive: .5;
+            flex-grow: .5;
+  }
+  .ui.compact.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/*
+@media(max-width: 749px) {.ui.image {width: 170%;}}
+@media(max-width: 585px) {.ui.image {width: 200%;}}
+@media(max-width: 513px) {
+    
+}
+*/
 /*# sourceMappingURL=App.css.map */

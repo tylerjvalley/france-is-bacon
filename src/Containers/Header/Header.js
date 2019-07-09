@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions';
-import { Grid } from 'semantic-ui-react';
 import SearchField from '../../Components/Search/Search';
 import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
@@ -196,18 +195,18 @@ class Header extends Component {
                     </div>
                 </div>
             </div>
-            <Container>
+           
             
-                <Grid className={subTheme} centered>
-                    <Grid.Row>
-                        <Subreddits
-                            clicked={() => this.handleAllClick()}
-                            sub='all'
-                        />
-                        {subreddits}
-                    </Grid.Row>
-                </Grid>
-
+            <div className={subTheme} centered>
+                <div className="grid-row">
+                    <Subreddits
+                        clicked={() => this.handleAllClick()}
+                        sub='all'
+                    />
+                    {subreddits}
+                </div>
+            </div>
+            <Container>
                 <div className={mainTheme}>
                         {main}
                 </div>
