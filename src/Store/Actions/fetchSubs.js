@@ -3,7 +3,18 @@ import axios from 'axios';
 const apiUrl = 'https://www.reddit.com/';
 
 
+// get r/all
 
+export const getFrontPage = () => { 
+
+    return axios.get(apiUrl + 'r/all/top.json')
+        .then(res => {
+            return res.data.data.children //top 25 posts
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
 
 
 //check if subreddit exists 

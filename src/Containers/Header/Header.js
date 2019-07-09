@@ -6,15 +6,23 @@ import SearchField from '../../Components/Search/Search';
 import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
 import { Container } from 'semantic-ui-react';
-import { fetchSubPosts, checkSubreddit, fetchPostComments } from '../../Store/Actions/fetchSubs';
+import { fetchSubPosts, checkSubreddit, fetchPostComments, getFrontPage } from '../../Store/Actions/fetchSubs';
 
 class Header extends Component {
 
     state = {
         posts: [],
         isValid: true,
+   
     }
 
+    componentDidMount() {
+
+       getFrontPage().then(posts => {
+           this.setState({posts: posts})
+       })
+       
+    }
     
     
     handleClick = (props) => {
@@ -31,6 +39,7 @@ class Header extends Component {
             }
 
         })
+     
         
         
     }
@@ -40,7 +49,15 @@ class Header extends Component {
             this.setState({posts: posts});
             
         });
+
+       
         
+    }
+
+    handleAllClick = () => {
+        getFrontPage().then(posts => {
+            this.setState({ posts: posts })
+        })
     }
 
     handlePostClick = (sub, id) => {
@@ -83,11 +100,12 @@ class Header extends Component {
             post_title = 'post-title-night';
             sub_title_styles = 'subreddit-title-night';
         }
-       
-        let subreddits;
 
+      
+        let subreddits;  
+        
         subreddits = this.props.subs.map(sub => {
-
+  
             return (
 
                 <Subreddits
@@ -95,10 +113,12 @@ class Header extends Component {
                     key={sub}
                     sub={sub}
                 />
+                
             )
 
-
         })
+
+    
 
       
 
@@ -180,6 +200,10 @@ class Header extends Component {
             
                 <Grid className={subTheme} centered>
                     <Grid.Row>
+                        <Subreddits
+                            clicked={() => this.handleAllClick()}
+                            sub='all'
+                        />
                         {subreddits}
                     </Grid.Row>
                 </Grid>

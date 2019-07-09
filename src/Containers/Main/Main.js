@@ -50,6 +50,7 @@ const main = (props) => {
     return (
    
         <div className="post">
+           
 
             <h4 className={props.subreddit_title_styles}>{props.subreddit_title}</h4>
            
