@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "589832884684842b65e4ab0f05d66c89",
+    "revision": "ceb0bbfceacc86b5bb31a3318227361a",
     "url": "/france-is-bacon/index.html"
   },
   {
-    "revision": "7d9c3aa3819ee36c8c07",
+    "revision": "ab15ba19b44c2f408161",
     "url": "/france-is-bacon/static/css/2.a0f546cc.chunk.css"
   },
   {
-    "revision": "59e7a0435a8a52e2a31c",
+    "revision": "da1d553cb35de917d672",
     "url": "/france-is-bacon/static/css/main.c9002280.chunk.css"
   },
   {
-    "revision": "7d9c3aa3819ee36c8c07",
-    "url": "/france-is-bacon/static/js/2.97526a82.chunk.js"
+    "revision": "ab15ba19b44c2f408161",
+    "url": "/france-is-bacon/static/js/2.f6e6b212.chunk.js"
   },
   {
-    "revision": "59e7a0435a8a52e2a31c",
-    "url": "/france-is-bacon/static/js/main.7dcf93c9.chunk.js"
+    "revision": "da1d553cb35de917d672",
+    "url": "/france-is-bacon/static/js/main.a1d9b12d.chunk.js"
   },
   {
     "revision": "e57c6b5f346c07733027",
