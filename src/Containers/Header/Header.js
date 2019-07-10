@@ -4,7 +4,7 @@ import * as actions from '../../Store/Actions';
 import SearchField from '../../Components/Search/Search';
 import Main from '../Main/Main';
 import Subreddits from '../../Components/Subreddits/Subreddits';
-import { Container } from 'semantic-ui-react';
+import { Container, Dropdown } from 'semantic-ui-react';
 import { fetchSubPosts, checkSubreddit, fetchPostComments, getFrontPage } from '../../Store/Actions/fetchSubs';
 
 class Header extends Component {
@@ -75,6 +75,8 @@ class Header extends Component {
     handleThemeSelect = (theme) => {
         this.props.onSelectTheme(theme);
     }
+
+    
 
 
 
@@ -155,11 +157,6 @@ class Header extends Component {
             )
         })
 
-
-       
-       
-       
-
         return (
             <>
 
@@ -168,32 +165,15 @@ class Header extends Component {
                 <SearchField 
                     search={this.props.onSearch}
                     clicked={() => this.handleClick(this.props.src)} /> 
-
-                    <div className="ui compact menu">
-                        <div role="listbox" aria-expanded="false" className="ui item simple dropdown" tabIndex="0">
-                            <div className="text" role="alert" aria-live="polite" aria-atomic="true">Change Theme</div>
-                            <i aria-hidden="true" className="dropdown icon"></i>
-                            <div className="menu transition">
-                                <div
-                                    aria-checked="false"
-                                    aria-selected="true"
-                                    className="selected item"
-                                    onClick={() => this.handleThemeSelect('default')}
-                                >
-                                    <span className="text">Default Theme</span>
-                                </div>
-                                <div
-                                    aria-checked="false"
-                                    aria-selected="false"
-                                    className="item"
-                                    onClick={() => this.handleThemeSelect('night')}
-                                >
-                                    <span className="text">Night Theme</span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                
+                    <Dropdown text='Change Theme' className="dropdown-menu">
+                        <Dropdown.Menu>
+                            <Dropdown.Item className="dropdown-menu-item" text='Default Theme' onClick={() => this.handleThemeSelect('default')} />
+                            <hr/>
+                            <Dropdown.Item className="dropdown-menu-item" text='Night Theme' onClick={() => this.handleThemeSelect('night')}/>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                
 
 
             </div>

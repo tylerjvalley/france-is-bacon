@@ -351,11 +351,26 @@ $nightThemeColor: #3b444b;
 
 /* ---- THEME CHANGER BOX ---- */
 
-.ui.compact.menu {
-    position: absolute;
-    top: 20%;
+.dropdown-menu {
+    border: 2px solid white;
+    padding: .5em;
+    position: absolute !important;
+    top: 5%;
+    left: 5%;
+
+    .text {
+        color: white;
+    }
+
+    i {
+        color: white;
+    }
 }
 
+.ui.dropdown .menu {
+    background: transparent !important;
+    color: white;
+}
 
 
 
@@ -429,6 +444,25 @@ $nightThemeColor: #3b444b;
 
     .sub-column {
         flex-grow: .5;
+    }
+
+
+    .dropdown-menu {
+        top: 0;
+        left: 0;
+
+        .text {
+            color: white;
+        }
+
+        i {
+            color: white;
+        }
+    }
+
+    .ui.dropdown .menu {
+        background: transparent !important;
+        color: white;
     }
 
     
